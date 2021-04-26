@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Multiplication Table</title>
+  </head>
+  <body>
+    <h1>
+      <label>Multiplication Table Generator</label><br>
+      <label for="num">Enter Number </label>
+
+      <input id="num" type="number" placeholder="1"
+      oninput="tablegen(this.value)"
+      onchange="tablegen(this.value)">
+
+      
+    </h1>
+    
+    <hr>
+    
+    <div class="table" id="table">
+    </div>
+
+    <script>
+
+        function tablegen(val){
+          var v = Number(val);
+          var parentElement = document.getElementById("table");
+          cleartable();
+          for(i=1;i<=10;i++){
+            var para = document.createElement("p");
+            var text = document.createTextNode(v + ' x ' + i + ' = ' + (v * i));
+            para.appendChild(text);
+
+            parentElement.appendChild(para);
+          }
+        }
+
+        function cleartable(){
+          var parentElement = document.getElementById("table");
+          while(parentElement.firstChild){
+            parentElement.removeChild(parentElement.lastChild);
+          }
+        }
+        
+        
+        /*
+        // Alternative Solution
+        function tablegen(y)
+        {
+          var x=parseInt(y);
+            for ( i=1;i<=10;i++)
+            {
+              document.getElementById("table").innerHTML+=  x + ' X '+ i +' = '+(x*i) +"<br>";
+            }
+
+        } 
+        */
+
+    </script>
+
+  </body>
+</html>
+
+<!-- Other approach could be to create child elements
+and update the inner HTML everytime a new value is
+entered -->
