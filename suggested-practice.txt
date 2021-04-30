@@ -1,0 +1,5 @@
+1. FD calculator from groww.in
+2. Reservations ko example -> repeat in OJET environment
+3. Timer OJET component -> use in other modules as well
+4. Reverse engineer the masterdetail project
+5. Search for FixIt-Fast demo project ans study that
